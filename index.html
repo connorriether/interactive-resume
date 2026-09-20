@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Interactive resume and portfolio for Connor Riether, Information Technology student at Florida State University.">
+<title>Connor Riether | Interactive Resume</title>
+<style>
+:root{
+  --bg:#f8f7f3; --panel:#ffffff; --panel2:#fffaf0; --text:#2b2b2b;
+  --muted:#5f6064; --accent:#782f40; --accent2:#ceb888; --border:#ded8ca;
+  --garnet:#782f40; --gold:#ceb888; --gold-light:#f5efdf; --white:#ffffff;
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#ffffff,#f8f7f3 55%,#f5efdf);color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:10;background:rgba(120,47,64,.97);backdrop-filter:blur(12px);border-bottom:4px solid var(--gold)}
+.nav-inner{max-width:1100px;margin:auto;padding:14px 22px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.logo{font-weight:800;letter-spacing:.5px}.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:18px;flex-wrap:wrap}
+.nav-links a{color:#f8f7f3;font-size:.95rem}.nav-links a:hover{color:var(--gold)}
+main{max-width:1100px;margin:auto;padding:0 22px}
+.hero{min-height:78vh;display:grid;place-items:center;padding:70px 0;border-top:8px solid var(--gold)}
+.hero-grid{display:grid;grid-template-columns:1.4fr .8fr;gap:35px;align-items:center;width:100%}
+.kicker{color:var(--garnet);font-weight:700;text-transform:uppercase;letter-spacing:2px;font-size:.85rem}
+h1{font-size:clamp(3rem,8vw,6rem);line-height:.95;margin:12px 0 20px}
+.hero h2{font-size:1.35rem;font-weight:500;color:var(--muted);max-width:720px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{padding:11px 17px;border:1px solid var(--border);border-radius:10px;background:var(--white);font-weight:700;transition:.2s}
+.btn.primary{background:var(--garnet);color:#ffffff;border-color:var(--garnet)}
+.btn:hover{transform:translateY(-2px)}
+.profile{background:linear-gradient(145deg,var(--gold-light),var(--panel));border:1px solid var(--border);border-radius:24px;padding:28px;box-shadow:0 20px 60px rgba(120,47,64,.12)}
+.avatar{width:150px;height:150px;border-radius:50%;margin:auto;display:grid;place-items:center;background:linear-gradient(145deg,var(--garnet),var(--gold));color:#ffffff;font-size:3.5rem;font-weight:900}
+.profile p{color:var(--muted);text-align:center}
+section{padding:80px 0}
+.section-title{font-size:2rem;margin:0 0 8px}.section-intro{color:var(--muted);max-width:760px;margin-bottom:28px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{background:rgba(255,255,255,.92);border:1px solid var(--border);border-radius:16px;padding:22px}
+.card h3{margin-top:0}.muted{color:var(--muted)}
+.pills{display:flex;flex-wrap:wrap;gap:9px}
+.pill{padding:7px 11px;border:1px solid var(--gold);border-radius:999px;color:var(--garnet);background:#fffdf8;font-size:.9rem}
+.timeline{border-left:2px solid var(--border);padding-left:25px}
+.timeline-item{position:relative;margin-bottom:26px}
+.timeline-item:before{content:"";position:absolute;left:-33px;top:7px;width:13px;height:13px;background:var(--garnet);border-radius:50%;box-shadow:0 0 0 5px #f8f7f3}
+.date{color:var(--garnet);font-weight:700;font-size:.9rem}
+details{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:17px 20px}
+details+details{margin-top:12px}
+summary{cursor:pointer;font-weight:800}
+summary::marker{color:var(--accent)}
+footer{border-top:4px solid var(--garnet);padding:30px 22px;color:var(--muted);text-align:center;background:#fff}
+@media(max-width:780px){
+ .hero-grid,.grid{grid-template-columns:1fr}.hero{padding-top:45px}.nav-inner{align-items:flex-start;flex-direction:column}
+ .nav-links{gap:10px}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#top">CR<span>.</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#education">Education</a>
+      <a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="kicker">Information Technology • Cybersecurity • Health Informatics</div>
+      <h1>Connor<br>Riether</h1>
+      <h2>Information Technology student at Florida State University focused on cybersecurity and health informatics.</h2>
+      <div class="btns">
+        <a class="btn primary" href="#contact">Get in touch</a>
+        <a class="btn" href="https://bitbucket.org/cdr25c/lis4376/src/main/" target="_blank" rel="noopener">View Portfolio</a>
+        <a class="btn" href="https://www.linkedin.com/in/connor-riether" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <aside class="profile">
+      <div class="avatar" aria-label="Connor Riether initials">CR</div>
+      <p><strong>Ocoee, Florida</strong><br>Florida State University<br>Expected Spring 2027</p>
+    </aside>
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-title">Career Objective</h2>
+  <p class="section-intro">Build a career in information technology with a focus on cybersecurity and health informatics, using technical, analytical, and problem-solving skills to support secure and effective technology environments.</p>
+  <div class="card">
+    <h3>Professional Snapshot</h3>
+    <p class="muted">I am pursuing a Bachelor’s Degree in Information Technology at Florida State University, with a focus in Cybersecurity &amp; Health Informatics. My background combines networking and security, programming and data analysis, healthcare technology, and professional experience in a safety-critical environment.</p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2 class="section-title">IT Skills &amp; Expertise</h2>
+  <p class="section-intro">Technical skills listed on the current resume.</p>
+  <div class="grid">
+    <div class="card"><h3>Programming &amp; Data</h3><div class="pills">
+      <span class="pill">Python</span><span class="pill">SQL</span><span class="pill">Data Analysis</span><span class="pill">Data Visualization</span><span class="pill">Machine Learning</span><span class="pill">Deep Learning</span>
+    </div></div>
+    <div class="card"><h3>Networking &amp; Security</h3><div class="pills">
+      <span class="pill">Cisco Packet Tracer</span><span class="pill">VLANs</span><span class="pill">Inter-VLAN Routing</span><span class="pill">IP Addressing</span><span class="pill">Network Segmentation</span><span class="pill">Firewalls</span><span class="pill">Access Controls</span>
+    </div></div>
+    <div class="card"><h3>Tools &amp; Platforms</h3><div class="pills">
+      <span class="pill">Bitbucket / Git</span><span class="pill">Jupyter Notebook</span><span class="pill">Visual Studio Code</span><span class="pill">Anaconda</span><span class="pill">Microsoft Azure Virtual Machines</span><span class="pill">Windows</span>
+    </div></div>
+    <div class="card"><h3>Health Informatics</h3><div class="pills">
+      <span class="pill">EHRs</span><span class="pill">Healthcare Data</span><span class="pill">Medical Databases</span><span class="pill">Healthcare Technology</span><span class="pill">HIPAA / Privacy Concepts</span>
+    </div></div>
+    <div class="card"><h3>Certifications</h3><div class="pills">
+      <span class="pill">Microsoft Word</span><span class="pill">Microsoft Excel</span><span class="pill">Microsoft PowerPoint</span><span class="pill">BLS</span>
+    </div></div>
+  </div>
+</section>
+
+<section id="education">
+  <h2 class="section-title">Education</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="date">Expected Spring 2027</div>
+      <h3>Florida State University — Tallahassee, FL</h3>
+      <p>Bachelor’s Degree in Information Technology<br><strong>Focus:</strong> Cybersecurity &amp; Health Informatics<br><strong>GPA:</strong> 3.6</p>
+    </div>
+    <div class="timeline-item">
+      <div class="date">Obtained Spring 2025</div>
+      <h3>Tallahassee State College — Tallahassee, FL</h3>
+      <p>Associate in Arts (AA)<br><strong>GPA:</strong> 3.8</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="section-title">Technical Projects</h2>
+  <p class="section-intro">Click each project to expand the details.</p>
+  <details open>
+    <summary>Enterprise Network Infrastructure — Cisco Packet Tracer</summary>
+    <ul>
+      <li>Designed a complete network for a fictional company relocating to a larger facility with limited IT space.</li>
+      <li>Configured IP addressing, routers, switches, firewall protections, and inter-VLAN routing.</li>
+      <li>Implemented department-specific VLANs and access controls to separate Research, Marketing, and other company networks.</li>
+      <li>Restricted departmental access to ensure users could only exchange information necessary for their functions.</li>
+    </ul>
+  </details>
+  <details>
+    <summary>Machine Learning &amp; Data Analysis — Python</summary>
+    <ul>
+      <li>Performed data collection, cleaning, preparation, analysis, and visualization using Python, Jupyter Notebook, and Seaborn; developed linear regression models for predictive analysis.</li>
+      <li>Managed programming projects and documentation using Git and Bitbucket.</li>
+    </ul>
+  </details>
+</section>
+
+<section id="experience">
+  <h2 class="section-title">Professional Experience</h2>
+  <div class="card">
+    <div class="date">May 2021 – August 2026</div>
+    <h3>YMCA — Lifeguard</h3>
+    <ul>
+      <li>Maintained a safe environment through continuous monitoring, attention to detail, and rapid response to safety concerns.</li>
+      <li>Demonstrated sound judgment, communication, teamwork, and professionalism in a safety-critical environment.</li>
+      <li>Maintained BLS certification and applied emergency-response training when required.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
+  <p class="section-intro">Interested in connecting? Use any of the links below.</p>
+  <div class="grid">
+    <div class="card"><h3>Email</h3><a href="mailto:connorriether@gmail.com" class="muted">connorriether@gmail.com</a></div>
+    <div class="card"><h3>Phone</h3><a href="tel:+14078653318" class="muted">407-865-3318</a></div>
+    <div class="card"><h3>LinkedIn</h3><a href="https://www.linkedin.com/in/connor-riether" target="_blank" rel="noopener" class="muted">linkedin.com/in/connor-riether</a></div>
+    <div class="card"><h3>Portfolio</h3><a href="https://bitbucket.org/cdr25c/lis4376/src/main/" target="_blank" rel="noopener" class="muted">Bitbucket portfolio</a></div>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 Connor Riether • Interactive Resume</footer>
+</body>
+</html>
