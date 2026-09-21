@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connor Riether — Information Technology Portfolio</title>
+  
+  <style>
+    :root {
+      --fsu-garnet: #782F40;
+      --fsu-garnet-dark: #5C2331;
+      --fsu-gold: #CEB888;
+      --fsu-gold-light: #F9F6EE;
+      --fsu-gold-dark: #B59E6D;
+      --bg-light: #F8F9FA;
+      --bg-white: #FFFFFF;
+      --text-main: #1F2937;
+      --text-muted: #4B5563;
+      --border-color: #E5E7EB;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 12px rgba(120, 47, 64, 0.08);
+      --transition: all 0.25s ease-in-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+
+    header.sticky-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: var(--bg-white);
+      border-bottom: 3px solid var(--fsu-garnet);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .nav-brand {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--fsu-garnet);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      padding: 0.25rem 0.5rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .nav-links a:hover {
+      color: var(--fsu-garnet);
+      background-color: var(--fsu-gold-light);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      background-color: var(--bg-white);
+      padding: 2.5rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      border-left: 6px solid var(--fsu-gold);
+      margin-bottom: 2.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .hero-grid {
+        grid-template-columns: 2fr 1fr;
+        align-items: center;
+      }
+    }
+
+    .kicker {
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--fsu-garnet);
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: 2.75rem;
+      line-height: 1.1;
+      color: var(--fsu-garnet);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      font-weight: 400;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+
+    .btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      color: var(--fsu-garnet);
+      background-color: transparent;
+      border: 2px solid var(--fsu-garnet);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: var(--fsu-gold-light);
+      border-color: var(--fsu-garnet);
+    }
+
+    .btn.primary {
+      background-color: var(--fsu-garnet);
+      color: #FFFFFF;
+      border-color: var(--fsu-garnet);
+    }
+
+    .btn.primary:hover {
+      background-color: var(--fsu-garnet-dark);
+      border-color: var(--fsu-garnet-dark);
+    }
+
+    aside.profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1.5rem;
+      background-color: var(--fsu-gold-light);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--fsu-gold);
+    }
+
+    .avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: var(--radius-full);
+      object-fit: cover;
+      border: 4px solid var(--fsu-gold);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
+      background-color: #E5E7EB;
+    }
+
+    aside.profile p {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+      scroll-margin-top: 100px;
+    }
+
+    .section-header {
+      font-size: 1.75rem;
+      color: var(--fsu-garnet);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--fsu-gold);
+      display: inline-block;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      color: var(--fsu-garnet);
+      margin-bottom: 0.75rem;
+    }
+
+    .muted {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      background-color: var(--bg-white);
+      padding: 1.75rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      border-top: 4px solid var(--fsu-garnet);
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .pill {
+      background-color: var(--fsu-gold-light);
+      color: var(--fsu-garnet);
+      border: 1px solid var(--fsu-gold);
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      border-left: 3px solid var(--fsu-gold);
+      padding-left: 1.5rem;
+      margin-left: 0.5rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      background-color: var(--bg-white);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.05rem;
+      top: 1.75rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: var(--fsu-garnet);
+      border: 3px solid var(--fsu-gold-light);
+    }
+
+    .date {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--fsu-garnet);
+      background-color: var(--fsu-gold-light);
+      padding: 0.2rem 0.65rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--fsu-gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card {
+      background-color: var(--bg-white);
+      padding: 1.75rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      border-left: 5px solid var(--fsu-garnet);
+      margin-bottom: 1.5rem;
+    }
+
+    summary {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--fsu-garnet);
+      cursor: pointer;
+      outline: none;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      margin-left: 1.25rem;
+      color: var(--text-muted);
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    /* Contact: two columns so Email + LinkedIn share the first row,
+       Phone + Portfolio share the second. Stacks on small screens. */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 768px) {
+      .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-card a {
+        white-space: nowrap;
+      }
+    }
+
+    .contact-card {
+      text-align: center;
+    }
+
+    .contact-card a {
+      overflow-wrap: anywhere;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="sticky-header">
+    <div class="nav-container">
+      <a href="#" class="nav-brand">Connor Riether</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="kicker">
+          Information Technology • Cybersecurity • Health Informatics
+        </div>
+
+        <h1>
+          Connor<br>Riether
+        </h1>
+
+        <h2>
+          Information Technology student at Florida State University focused on cybersecurity and health informatics.
+        </h2>
+
+        <div class="btns">
+          <a class="btn primary" href="#contact">Get in touch</a>
+
+          <a class="btn"
+             href="https://bitbucket.org/cdr25c/lis4376/src/main/"
+             target="_blank"
+             rel="noopener">
+            View Portfolio
+          </a>
+
+          <a class="btn"
+             href="https://www.linkedin.com/in/connor-riether"
+             target="_blank"
+             rel="noopener">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <aside class="profile">
+        <!-- Exact profile image tag requested -->
+        <img
+          class="avatar"
+          src="profile.jpg"
+          alt="Connor Riether">
+
+        <p>
+          <strong>Ocoee, Florida</strong><br>
+          Florida State University<br>
+          Expected Spring 2027
+        </p>
+      </aside>
+    </div>
+
+    <section id="about" class="section">
+      <h2 class="section-header">Professional Snapshot</h2>
+      <p class="muted">
+        I am pursuing a Bachelor’s Degree in Information Technology at Florida State University, with a focus in Cybersecurity &amp; Health Informatics. My background combines networking and security, programming and data analysis, healthcare technology, and professional experience in a safety-critical environment.
+      </p>
+    </section>
+
+    <section id="skills" class="section">
+      <h2 class="section-header">Skills &amp; Expertise</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <h3>
+            Programming &amp; Data
+          </h3>
+          <div class="pills">
+            <span class="pill">Python</span>
+            <span class="pill">SQL</span>
+            <span class="pill">Data Analysis</span>
+            <span class="pill">Data Visualization</span>
+            <span class="pill">Machine Learning</span>
+            <span class="pill">Deep Learning</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>
+            Networking &amp; Security
+          </h3>
+          <div class="pills">
+            <span class="pill">Cisco Packet Tracer</span>
+            <span class="pill">VLANs</span>
+            <span class="pill">Inter-VLAN Routing</span>
+            <span class="pill">IP Addressing</span>
+            <span class="pill">Network Segmentation</span>
+            <span class="pill">Firewalls</span>
+            <span class="pill">Access Controls</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>
+            Tools &amp; Platforms
+          </h3>
+          <div class="pills">
+            <span class="pill">Bitbucket / Git</span>
+            <span class="pill">Jupyter Notebook</span>
+            <span class="pill">Visual Studio Code</span>
+            <span class="pill">Anaconda</span>
+            <span class="pill">Microsoft Azure Virtual Machines</span>
+            <span class="pill">Windows</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>
+            Health Informatics
+          </h3>
+          <div class="pills">
+            <span class="pill">EHRs</span>
+            <span class="pill">Healthcare Data</span>
+            <span class="pill">Medical Databases</span>
+            <span class="pill">Healthcare Technology</span>
+            <span class="pill">HIPAA / Privacy Concepts</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>
+            Certifications
+          </h3>
+          <div class="pills">
+            <span class="pill">Microsoft Word</span>
+            <span class="pill">Microsoft Excel</span>
+            <span class="pill">Microsoft PowerPoint</span>
+            <span class="pill">BLS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <h2 class="section-header">Education</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="date">
+            Expected Spring 2027
+          </div>
+          <h3>
+            Florida State University — Tallahassee, FL
+          </h3>
+          <p class="muted">
+            Bachelor’s Degree in Information Technology<br>
+            <strong>Focus:</strong> Cybersecurity &amp; Health Informatics<br>
+            <strong>GPA:</strong> 3.6
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="date">
+            Obtained Spring 2025
+          </div>
+          <h3>
+            Tallahassee State College — Tallahassee, FL
+          </h3>
+          <p class="muted">
+            Associate in Arts (AA)<br>
+            <strong>GPA:</strong> 3.8
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2 class="section-header">Featured Projects</h2>
+
+      <div class="project-card">
+        <summary>
+          Enterprise Network Infrastructure — Cisco Packet Tracer
+        </summary>
+        <ul>
+          <li>
+            Designed a complete network for a fictional company relocating to a larger facility with limited IT space.
+          </li>
+          <li>
+            Configured IP addressing, routers, switches, firewall protections, and inter-VLAN routing.
+          </li>
+          <li>
+            Implemented department-specific VLANs and access controls to separate Research, Marketing, and other company networks.
+          </li>
+          <li>
+            Restricted departmental access to ensure users could only exchange information necessary for their functions.
+          </li>
+        </ul>
+      </div>
+
+      <div class="project-card">
+        <summary>
+          Machine Learning &amp; Data Analysis — Python
+        </summary>
+        <ul>
+          <li>
+            Performed data collection, cleaning, preparation, analysis, and visualization using Python, Jupyter Notebook, and Seaborn; developed linear regression models for predictive analysis.
+          </li>
+          <li>
+            Managed programming projects and documentation using Git and Bitbucket.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <h2 class="section-header">Work Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="date">
+            May 2021 – August 2026
+          </div>
+          <h3>
+            YMCA — Lifeguard
+          </h3>
+          <ul>
+            <li>
+              Maintained a safe environment through continuous monitoring, attention to detail, and rapid response to safety concerns.
+            </li>
+            <li>
+              Demonstrated sound judgment, communication, teamwork, and professionalism in a safety-critical environment.
+            </li>
+            <li>
+              Maintained BLS certification and applied emergency-response training when required.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2 class="section-header">Contact Information</h2>
+      <div class="contact-grid">
+        <div class="card contact-card">
+          <h3>Email</h3>
+          <a href="mailto:connorriether@gmail.com" class="muted">
+            connorriether@gmail.com
+          </a>
+        </div>
+
+        <div class="card contact-card">
+          <h3>LinkedIn</h3>
+          <a
+            href="https://www.linkedin.com/in/connor-riether"
+            target="_blank"
+            rel="noopener"
+            class="muted">
+            linkedin.com/in/connor-riether
+          </a>
+        </div>
+
+        <div class="card contact-card">
+          <h3>Phone</h3>
+          <a href="tel:+14078653318" class="muted">
+            407-865-3318
+          </a>
+        </div>
+
+        <div class="card contact-card">
+          <h3>Portfolio</h3>
+          <a
+            href="https://bitbucket.org/cdr25c/lis4376/src/main/"
+            target="_blank"
+            rel="noopener"
+            class="muted">
+            Bitbucket portfolio
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
