@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connor Riether - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Additional custom styling to match classes used in content */
+    .kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #2563eb;
+    }
+    .pill {
+      display: inline-block;
+      background-color: #f3f4f6;
+      color: #1f2937;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      border: 1px solid #e5e7eb;
+    }
+    .muted {
+      color: #4b5563;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased font-sans">
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <span class="font-bold text-lg text-slate-900">Connor Riether</span>
+      <nav class="nav-links flex gap-6 text-sm font-medium text-slate-600">
+        <a href="#about" class="hover:text-blue-600 transition-colors">About</a>
+        <a href="#skills" class="hover:text-blue-600 transition-colors">Skills</a>
+        <a href="#education" class="hover:text-blue-600 transition-colors">Education</a>
+        <a href="#projects" class="hover:text-blue-600 transition-colors">Projects</a>
+        <a href="#experience" class="hover:text-blue-600 transition-colors">Experience</a>
+        <a href="#contact" class="hover:text-blue-600 transition-colors">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 py-12 space-y-16">
+
+    <!-- Hero Section -->
+    <section id="about" class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center pt-6">
+      <div class="md:col-span-2 space-y-6">
+        <div class="kicker">
+          Information Technology • Cybersecurity • Health Informatics
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          Connor<br>Riether
+        </h1>
+
+        <h2 class="text-xl text-slate-600 leading-relaxed">
+          Information Technology student at Florida State University focused on cybersecurity and health informatics.
+        </h2>
+
+        <div class="btns flex flex-wrap gap-4 pt-2">
+          <a class="btn primary inline-flex items-center px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors shadow-sm" href="#contact">Get in touch</a>
+
+          <a class="btn inline-flex items-center px-5 py-2.5 bg-white hover:bg-slate-100 text-slate-700 font-medium rounded-lg border border-slate-300 transition-colors shadow-sm"
+             href="https://bitbucket.org/cdr25c/lis4376/src/main/"
+             target="_blank"
+             rel="noopener">
+            View Portfolio
+          </a>
+
+          <a class="btn inline-flex items-center px-5 py-2.5 bg-white hover:bg-slate-100 text-slate-700 font-medium rounded-lg border border-slate-300 transition-colors shadow-sm"
+             href="https://www.linkedin.com/in/connor-riether"
+             target="_blank"
+             rel="noopener">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <aside class="profile bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center text-center">
+        <!-- Replace profile.jpg with your picture filename if needed -->
+        <img
+          class="avatar w-36 h-36 rounded-full object-cover border-4 border-blue-50 shadow-inner mb-4"
+          src="profile.jpg"
+          alt="Connor Riether">
+
+        <p class="text-sm text-slate-600">
+          <strong class="text-slate-900 block text-base font-semibold">Ocoee, Florida</strong>
+          Florida State University<br>
+          <span class="text-blue-600 font-medium">Expected Spring 2027</span>
+        </p>
+      </aside>
+    </section>
+
+    <!-- Professional Snapshot -->
+    <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+      <h3 class="text-2xl font-bold text-slate-900 mb-4">
+        Professional Snapshot
+      </h3>
+
+      <p class="muted text-lg leading-relaxed">
+        I am pursuing a Bachelor’s Degree in Information Technology at Florida State University, with a focus in Cybersecurity &amp; Health Informatics. My background combines networking and security, programming and data analysis, healthcare technology, and professional experience in a safety-critical environment.
+      </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="space-y-6">
+      <h2 class="text-2xl font-bold text-slate-900">Skills &amp; Competencies</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="card bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+          <h3 class="text-lg font-bold text-slate-900 mb-4">
+            Programming &amp; Data
+          </h3>
+          <div class="pills flex flex-wrap">
+            <span class="pill">Python</span>
+            <span class="pill">SQL</span>
+            <span class="pill">Data Analysis</span>
+            <span class="pill">Data Visualization</span>
+            <span class="pill">Machine Learning</span>
+            <span class="pill">Deep Learning</span>
+          </div>
+        </div>
+
+        <div class="card bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+          <h3 class="text-lg font-bold text-slate-900 mb-4">
+            Networking &amp; Security
+          </h3>
+          <div class="pills flex flex-wrap">
+            <span class="pill">Cisco Packet Tracer</span>
+            <span class="pill">VLANs</span>
+            <span class="pill">Inter-VLAN Routing</span>
+            <span class="pill">IP Addressing</span>
+            <span class="pill">Network Segmentation</span>
+            <span class="pill">Firewalls</span>
+            <span class="pill">Access Controls</span>
+          </div>
+        </div>
+
+        <div class="card bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+          <h3 class="text-lg font-bold text-slate-900 mb-4">
+            Tools &amp; Platforms
+          </h3>
+          <div class="pills flex flex-wrap">
+            <span class="pill">Bitbucket / Git</span>
+            <span class="pill">Jupyter Notebook</span>
+            <span class="pill">Visual Studio Code</span>
+            <span class="pill">Anaconda</span>
+            <span class="pill">Microsoft Azure Virtual Machines</span>
+            <span class="pill">Windows</span>
+          </div>
+        </div>
+
+        <div class="card bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+          <h3 class="text-lg font-bold text-slate-900 mb-4">
+            Health Informatics
+          </h3>
+          <div class="pills flex flex-wrap">
+            <span class="pill">EHRs</span>
+            <span class="pill">Healthcare Data</span>
+            <span class="pill">Medical Databases</span>
+            <span class="pill">Healthcare Technology</span>
+            <span class="pill">HIPAA / Privacy Concepts</span>
+          </div>
+        </div>
+
+        <div class="card bg-white p-6 rounded-xl border border-slate-200 shadow-sm md:col-span-2 lg:col-span-1">
+          <h3 class="text-lg font-bold text-slate-900 mb-4">
+            Certifications
+          </h3>
+          <div class="pills flex flex-wrap">
+            <span class="pill">Microsoft Word</span>
+            <span class="pill">Microsoft Excel</span>
+            <span class="pill">Microsoft PowerPoint</span>
+            <span class="pill">BLS</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="space-y-6">
+      <h2 class="text-2xl font-bold text-slate-900">Education</h2>
+      <div class="space-y-4">
+        <div class="timeline-item bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+          <div class="date text-sm font-semibold text-blue-600 mb-1">
+            Expected Spring 2027
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">
+            Florida State University — Tallahassee, FL
+          </h3>
+          <p class="mt-2 text-slate-700">
+            Bachelor’s Degree in Information Technology<br>
+            <strong>Focus:</strong> Cybersecurity &amp; Health Informatics<br>
+            <strong>GPA:</strong> 3.6
+          </p>
+        </div>
+
+        <div class="timeline-item bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+          <div class="date text-sm font-semibold text-blue-600 mb-1">
+            Obtained Spring 2025
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">
+            Tallahassee State College — Tallahassee, FL
+          </h3>
+          <p class="mt-2 text-slate-700">
+            Associate in Arts (AA)<br>
+            <strong>GPA:</strong> 3.8
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="space-y-6">
+      <h2 class="text-2xl font-bold text-slate-900">Projects</h2>
+      
+      <div class="space-y-6">
+        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+          <summary class="text-xl font-bold text-slate-900 block cursor-default list-none mb-4">
+            Enterprise Network Infrastructure — Cisco Packet Tracer
+          </summary>
+          <ul class="list-disc pl-5 space-y-2 text-slate-700">
+            <li>Designed a complete network for a fictional company relocating to a larger facility with limited IT space.</li>
+            <li>Configured IP addressing, routers, switches, firewall protections, and inter-VLAN routing.</li>
+            <li>Implemented department-specific VLANs and access controls to separate Research, Marketing, and other company networks.</li>
+            <li>Restricted departmental access to ensure users could only exchange information necessary for their functions.</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+          <summary class="text-xl font-bold text-slate-900 block cursor-default list-none mb-4">
+            Machine Learning &amp; Data Analysis — Python
+          </summary>
+          <ul class="list-disc pl-5 space-y-2 text-slate-700">
+            <li>Performed data collection, cleaning, preparation, analysis, and visualization using Python, Jupyter Notebook, and Seaborn; developed linear regression models for predictive analysis.</li>
+            <li>Managed programming projects and documentation using Git and Bitbucket.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="space-y-6">
+      <h2 class="text-2xl font-bold text-slate-900">Experience</h2>
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+        <div class="date text-sm font-semibold text-blue-600 mb-1">
+          May 2021 – August 2026
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-4">
+          YMCA — Lifeguard
+        </h3>
+        <ul class="list-disc pl-5 space-y-2 text-slate-700">
+          <li>Maintained a safe environment through continuous monitoring, attention to detail, and rapid response to safety concerns.</li>
+          <li>Demonstrated sound judgment, communication, teamwork, and professionalism in a safety-critical environment.</li>
+          <li>Maintained BLS certification and applied emergency-response training when required.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="space-y-6">
+      <h2 class="text-2xl font-bold text-slate-900">Contact Information</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <div class="card bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+          <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-2">Email</h3>
+          <a href="mailto:connorriether@gmail.com" class="muted font-medium text-blue-600 hover:underline break-all">
+            connorriether@gmail.com
+          </a>
+        </div>
+
+        <div class="card bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+          <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-2">Phone</h3>
+          <a href="tel:+14078653318" class="muted font-medium text-blue-600 hover:underline">
+            407-865-3318
+          </a>
+        </div>
+
+        <div class="card bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+          <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-2">LinkedIn</h3>
+          <a href="https://www.linkedin.com/in/connor-riether" target="_blank" rel="noopener" class="muted font-medium text-blue-600 hover:underline">
+            linkedin.com/in/connor-riether
+          </a>
+        </div>
+
+        <div class="card bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+          <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-2">Portfolio</h3>
+          <a href="https://bitbucket.org/cdr25c/lis4376/src/main/" target="_blank" rel="noopener" class="muted font-medium text-blue-600 hover:underline">
+            Bitbucket portfolio
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-slate-200 py-6 text-center text-sm text-slate-500">
+    <p>&copy; Connor Riether. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
